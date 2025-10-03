@@ -78,3 +78,6 @@ document.getElementById("submitForm").addEventListener("submit", (e) => {
   updateCounters();
   alert("Form submitted!");
 });
+
+
+
