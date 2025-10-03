@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arithmetic Functions Example</title>
+</head>
+<body>
+  <h1>Arithmetic Functions in JavaScript</h1>
+
+  <script>
+    // add
+    function add(a, b) {
+      return a + b;
+    }
+
+    // subtract
+    function subtract(a, b) {
+      return a - b;
+    }
+
+    // Multiplication
+    function multiply(a, b) {
+      return a * b;
+    }
+
+    // Division
+    function divide(a, b) {
+      if (b === 0) {
+        return "Error: Cannot divide by zero!";
+      }
+      return a / b;
+    }
+
+    //  remainder (modulus)
+    function modulus(a, b) {
+      return a % b;
+    }
+
+    //  Using the functions
+    console.log("Add: 5 + 3 =", add(5, 3));
+    console.log("Subtract: 5 - 3 =", subtract(5, 3));
+    console.log("Multiply: 5 * 3 =", multiply(5, 3));
+    console.log("Divide: 10 / 2 =", divide(10, 2));
+    console.log("Divide by zero: 10 / 0 =", divide(10, 0));
+    console.log("Modulus: 10 % 3 =", modulus(10, 3));
+  </script>
+</body>
+</html>

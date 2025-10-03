@@ -1,0 +1,50 @@
+/* body{
+    background-color: blue;
+    height: 100%;
+    width:  100%;
+} */
+
+.hero-section{
+    display: flex;
+    background-color: red;
+    flex-direction: row;
+    margin-top: 10%;
+    width: 70%;
+    height: 300px;
+    border: 2px solid red;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.box {
+    /* width: 20%;
+    height: 20%;
+    background-color: blue; */
+    margin: 2px;
+}
+
+.box1{
+    height: 70%;
+    background-color: green;
+}
+
+.box2{
+    height: 60%;
+    background-color: pink;
+}
+
+.box3{
+    height: 40%;
+    background-color: aliceblue;
+}
+
+.box4{
+    height: 60%;
+    background-color: black;
+}
+
+.box5{
+    height: 70%;
+    background-color: orange;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loops Example</title>
+</head>
+<body>
+  <h2>Loops</h2>
+  <div id="output"></div>
+  <p id="endline"></p>
+
+  <script>
+    const out = document.getElementById("output");
+    const end = document.getElementById("endline")
+    // for (let i = 1; i <= 5; i++) {
+    //   out.innerHTML += "for loop: " + i + "<br>";
+    // }
+    // //   end.innerHTML += " END OF LOOP";
+
+    // let j = 1;
+    // while (j <= 5) {
+    //   out.innerHTML += "while loop: " + j + "<br>";
+    //   j++;
+    // }
+
+    // let k = 6;
+    // do {
+    //   out.innerHTML += "do...while loop: " + k + "<br>";
+    //   k++;
+    // } while (k <= 5);
+
+    // let colors = ["Red", "Green", "Blue"];
+    // for (let color of colors) {
+    //   out.innerHTML += "for...of loop: " + color + "<br>";
+    // }
+
+    // let person = { name: "Rotimi", age: 22, city: "Ilorin" };
+    // for (let key in person) {
+    //   out.innerHTML += "for...in loop: " + key + " = " + person[key] + "<br>";
+    // }
+
+    for (let y = 0;  y <= 10; y++) {
+        out.innerHTML += y + "<br />";   
+    }
+
+
+    let userInput = prompt("Enter something (type 'stop' to quit):");
+    out += "2. User inputs until 'stop':\n";
+    while (userInput !== "stop") {
+      out += userInput + "\n";
+      userInput = prompt("Enter something (type 'stop' to quit):");
+    }
+    out += "Stopped!\n\n";
+
+      // 3. Asks once for password, then repeats until correct (do...while loop)
+    // let password;
+    // do {
+    //   password = prompt("Enter password (hint: secret123):");
+    // } while (password !== "secret123");
+    // out += "3. Correct password entered!\n\n";
+   let password = 1234
+
+
+  </script>
+</body>
+</html>
+
+
+<!-- "Write a program that:
+
+Prints numbers 1–10.
+
+Keeps asking for input until the user types 'stop'.
+
+Asks once for password, then repeats until correct.
+
+Loops through an array of fruits and prints them.
+
+Loops through an object describing yourself (name, school, hobby) and prints each property" -->

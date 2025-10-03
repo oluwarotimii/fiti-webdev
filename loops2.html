@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loop Practice</title>
+</head>
+<body>
+  <h1>JavaScript Loop & Condition Practice</h1>
+  <pre id="output"></pre>
+
+  <script>
+    let out = "";
+
+    // 1. Prints numbers 1–10 (for loop)
+    out += "1. Numbers 1–10:\n";
+    for (let i = 1; i <= 10; i++) {
+      out += i + " ";
+    }
+    out += "\n\n";
+
+    // 2. Keeps asking for input until user types 'stop' (while loop)
+    let userInput = prompt("Enter something (type 'stop' to quit):");
+    out += "2. User inputs until 'stop':\n";
+    while (userInput !== "stop") {
+      out += userInput + "\n";
+      userInput = prompt("Enter something (type 'stop' to quit):");
+    }
+    out += "Stopped!\n\n";
+
+    // 3. Asks once for password, then repeats until correct (do...while loop)
+    let password;
+    do {
+      password = prompt("Enter password (hint: secret123):");
+    } while (password !== "secret123");
+    out += "3. Correct password entered!\n\n";
+
+    // 4. Loops through an array of fruits and prints them (for...of)
+    let fruits = ["Apple", "Banana", "Mango", "Orange"];
+    out += "4. Fruits in the array:\n";
+    for (let fruit of fruits) {
+      out += fruit + "\n";
+    }
+    out += "\n";
+
+    // 5. Loops through an object describing yourself (for...in)
+    let me = { name: "Oluwarotimi", school: "University of Ilorin", hobby: "Coding" };
+    out += "5. About me:\n";
+    for (let key in me) {
+      out += key + ": " + me[key] + "\n";
+    }
+
+    
+    document.getElementById("output").textContent = out;
+  </script>
+</body>
+</html>

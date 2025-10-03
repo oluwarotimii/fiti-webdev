@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals</title>
+</head>
+<body>
+    
+    <script>
+        let animalName = prompt("Please enter name of an Animal");
+        let animalSound = "null";
+
+        function checkAnimal(animalName) {
+            if (animalName === "Dog") {
+                alert("Bark!");
+                console.log("Cited");
+                animalSound = "Bark";
+            } else if (animalName === "Cat") {
+                alert("Meow!");
+                animalSound = "Meow!";
+                console.log("Cited");
+            } else if (animalName === "Cow") {
+                alert("Moooo!");
+                animalSound = "Moo!";
+                console.log("Cited");
+            } else {
+                animalSound = "Unknown sound";
+                alert(animalSound);
+                console.log("Cited");
+            }
+        }
+
+        checkAnimal(animalName);
+    </script>
+</body>
+</html>

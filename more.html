@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: darkblue;
+    }
+    .event-box {
+      border: 2px dashed gray;
+      padding: 20px;
+      margin: 10px 0;
+      width: 250px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .counters {
+      margin-top: 20px;
+    }
+    .counters li {
+      list-style: none;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Events Demo</h1>
+
+  <!-- Elements for testing events -->
+  <div class="event-box" id="clickBox">Click me</div>
+  <div class="event-box" id="dblClickBox">Double Click me</div>
+  <div class="event-box" id="hoverBox">Hover over me</div>
+  <input type="text" id="keyInput" placeholder="Type here..." class="event-box" />
+  <button id="focusBtn" class="event-box">Focus me</button>
+
+  <form id="submitForm" class="event-box">
+    <input type="text" placeholder="Enter text" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Counters -->
+  <h2>Event Counters</h2>
+  <ul class="counters" id="counterList"></ul>
+
+  <script src="more.js"></script>
+</body>
+</html>
+
+
+<!-- Word Problem
+
+A small library is tracking the books borrowed by students.
+
+The library has an object called library that stores:
+
+books → an array of book titles.
+
+borrowed → how many times each book has been borrowed (as another object).
+
+Write a program that does the following:
+
+Prints out all the books in the library.
+
+Lets a user type the name of a book they want to borrow.
+
+If the book exists, increase its borrow count and show a success message.
+
+If it doesn’t exist, show an error message.
+
+Use a loop to allow borrowing up to 3 times.
+
+At the end, use a function called report() that prints out how many times each book was borrowed. -->
