@@ -2,56 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loop Practice</title>
+  <title>Loops Example</title>
 </head>
 <body>
-  <h1>JavaScript Loop & Condition Practice</h1>
-  <pre id="output"></pre>
+  <h2>Loops Example</h2>
+  <div id="output"></div>
+  <p id="endline"></p>
 
   <script>
-    let out = "";
+    const out = document.getElementById("output");
+    const end = document.getElementById("endline");
 
-    // 1. Prints numbers 1–10 (for loop)
-    out += "1. Numbers 1–10:\n";
+    // 1. Print numbers 1–10
+    out.innerHTML += "<h3>1. Numbers 1–10</h3>";
     for (let i = 1; i <= 10; i++) {
-      out += i + " ";
+      out.innerHTML += i + "<br>";
     }
-    out += "\n\n";
 
-    // 2. Keeps asking for input until user types 'stop' (while loop)
+    // 2. Keep asking for input until user types "stop"
+    out.innerHTML += "<h3>2. User Input Until 'stop'</h3>";
     let userInput = prompt("Enter something (type 'stop' to quit):");
-    out += "2. User inputs until 'stop':\n";
     while (userInput !== "stop") {
-      out += userInput + "\n";
+      out.innerHTML += userInput + "<br>";
       userInput = prompt("Enter something (type 'stop' to quit):");
     }
-    out += "Stopped!\n\n";
+    out.innerHTML += "Stopped!<br>";
 
-    // 3. Asks once for password, then repeats until correct (do...while loop)
-    let password;
-    do {
-      password = prompt("Enter password (hint: secret123):");
-    } while (password !== "secret123");
-    out += "3. Correct password entered!\n\n";
+    // 3. Ask once for password, repeat until correct
+    out.innerHTML += "<h3>3. Password Check</h3>";
+    const correctPassword = "1234";
+    let password = prompt("Enter password:");
+    while (password !== correctPassword) {
+      out.innerHTML += "Wrong password, try again.<br>";
+      password = prompt("Enter password:");
+    }
+    out.innerHTML += "Access granted!<br>";
 
-    // 4. Loops through an array of fruits and prints them (for...of)
+    // 4. Loop through an array of fruits
+    out.innerHTML += "<h3>4. Fruits</h3>";
     let fruits = ["Apple", "Banana", "Mango", "Orange"];
-    out += "4. Fruits in the array:\n";
     for (let fruit of fruits) {
-      out += fruit + "\n";
-    }
-    out += "\n";
-
-    // 5. Loops through an object describing yourself (for...in)
-    let me = { name: "Oluwarotimi", school: "University of Ilorin", hobby: "Coding" };
-    out += "5. About me:\n";
-    for (let key in me) {
-      out += key + ": " + me[key] + "\n";
+      out.innerHTML += fruit + "<br>";
     }
 
-    
-    document.getElementById("output").textContent = out;
+    // 5. Loop through an object describing yourself
+    out.innerHTML += "<h3>5. About Me</h3>";
+    let person = { 
+      name: "Rotimi", 
+      school: "University of Ilorin", 
+      hobby: "Coding" 
+    };
+    for (let key in person) {
+      out.innerHTML += key + " : " + person[key] + "<br>";
+    }
+
   </script>
 </body>
 </html>
