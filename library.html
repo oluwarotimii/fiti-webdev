@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Borrow System</title>
+</head>
+<body>
+  <h2>Library Borrow System</h2>
+  <div id="output"></div>
+
+  <script>
+    const out = document.getElementById("output");
+
+    // Library object
+    const library = {
+      books: ["Math", "Science", "History", "English"],
+      borrowed: { Math: 0, Science: 0, History: 0, English: 0 }
+    };
+
+    // Show available books
+    out.innerHTML += "Available books:<br>";
+    for (let book of library.books) {
+      out.innerHTML += book + "<br>";
+    }
+
+    // Borrow loop  runs 10 times
+    let count = 0;
+    while (count < 10) {
+      let choice = prompt("Enter a book name to borrow (type 'stop' if you want to skip):");
+
+      if (choice === "stop") {
+        // Do nothing, just skip this round
+      } else if (library.books.includes(choice)) {
+        library.borrowed[choice] = library.borrowed[choice] + 1;
+        alert("You borrowed " + choice + " successfully!");
+      } else {
+        alert("Sorry, that book is not in the library.");
+      }
+
+      count = count + 1;
+    }
+
+    // Report function
+    function report() {
+      out.innerHTML += "<br>Borrow Report:<br>";
+      for (let book in library.borrowed) {
+        out.innerHTML += book + " was borrowed " + library.borrowed[book] + " times.<br>";
+      }
+    }
+
+    report();
+  </script>
+</body>
+</html>
