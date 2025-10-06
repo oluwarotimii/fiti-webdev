@@ -25,20 +25,20 @@
 
     // Borrow loop  runs 10 times
     let count = 0;
-    while (count < 10) {
+    // while (count < 10) {
       let choice = prompt("Enter a book name to borrow (type 'stop' if you want to skip):");
 
       if (choice === "stop") {
         // Do nothing, just skip this round
       } else if (library.books.includes(choice)) {
         library.borrowed[choice] = library.borrowed[choice] + 1;
-        alert("You borrowed " + choice + " successfully!");
+        alert("You borrowed " + choice + " successfully! " + 24);
       } else {
         alert("Sorry, that book is not in the library.");
       }
 
-      count = count + 1;
-    }
+      // count = count + 1;
+    // }
 
     // Report function
     function report() {
