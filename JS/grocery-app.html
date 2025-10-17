@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .input-section {
+            display: flex;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        
+        #groceryInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #addBtn {
+            background-color: #2196F3;
+        }
+        
+        #addBtn:hover {
+            background-color: #1976D2;
+        }
+        
+        #removeBtn {
+            background-color: #f44336;
+        }
+        
+        #removeBtn:hover {
+            background-color: #d32f2f;
+        }
+        
+        #checkBtn {
+            background-color: #FF9800;
+        }
+        
+        #checkBtn:hover {
+            background-color: #F57C00;
+        }
+        
+        .grocery-list {
+            margin-top: 20px;
+        }
+        
+        .grocery-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .remove-item-btn {
+            background-color: #f44336;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        
+        .remove-item-btn:hover {
+            background-color: #d32f2f;
+        }
+        
+        .empty-message {
+            text-align: center;
+            color: #777;
+            font-style: italic;
+            padding: 20px;
+        }
+        
+        .status-message {
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery List Manager</h1>
+        
+        <div class="input-section">
+            <input type="text" id="groceryInput" placeholder="Enter grocery item...">
+            <button id="addBtn">Add Item</button>
+            <button id="removeBtn">Remove Item</button>
+            <button id="checkBtn">Check Empty</button>
+        </div>
+        
+        <div id="statusMessage"></div>
+        
+        <div class="grocery-list">
+            <h3>Your Grocery List:</h3>
+            <div id="groceryItems"></div>
+        </div>
+    </div>
+
+    <script>
+        // Start with an empty grocery list (an empty array)
+        let groceries = [];
+        
+        // DOM elements
+        const groceryInput = document.getElementById('groceryInput');
+        const addBtn = document.getElementById('addBtn');
+        const removeBtn = document.getElementById('removeBtn');
+        const checkBtn = document.getElementById('checkBtn');
+        const groceryItems = document.getElementById('groceryItems');
+        const statusMessage = document.getElementById('statusMessage');
+        
+        // Function to show status message
+        function showStatus(message, type) {
+            statusMessage.textContent = message;
+            statusMessage.className = `status-message ${type}`;
+            
+            setTimeout(() => {
+                statusMessage.textContent = '';
+                statusMessage.className = '';
+            }, 3000);
+        }
+        
+        // Function to add an item to the list
+        function addItem(item) {
+            if (groceries.includes(item)) {
+                showStatus("Item already in list!", "error");
+            } else {
+                groceries.push(item);
+                showStatus("Item added!", "success");
+                renderGroceryList();
+            }
+        }
+        
+        // Function to remove an item from the list
+        function removeItem(item) {
+            const index = groceries.indexOf(item);
+            if (index === -1) {
+                showStatus("Item not found!", "error");
+            } else {
+                groceries.splice(index, 1);
+                showStatus("Item removed!", "success");
+                renderGroceryList();
+            }
+        }
+        
+        // Function that checks if the list is empty
+        function checkIfEmpty() {
+            const isEmpty = groceries.length === 0;
+            showStatus(isEmpty, "info");
+            return isEmpty;
+        }
+        
+        // Function to render the grocery list in the UI
+        function renderGroceryList() {
+            groceryItems.innerHTML = '';
+            
+            if (groceries.length === 0) {
+                const emptyMessage = document.createElement('div');
+                emptyMessage.className = 'empty-message';
+                emptyMessage.textContent = 'Your grocery list is empty. Add some items!';
+                groceryItems.appendChild(emptyMessage);
+            } else {
+                groceries.forEach(item => {
+                    const groceryItem = document.createElement('div');
+                    groceryItem.className = 'grocery-item';
+                    groceryItem.innerHTML = `
+                        <span>${item}</span>
+                        <button class="remove-item-btn" data-item="${item}">Remove</button>
+                    `;
+                    
+                    groceryItems.appendChild(groceryItem);
+                    
+                    // Add event listener to the remove button for this item
+                    groceryItem.querySelector('.remove-item-btn').addEventListener('click', () => {
+                        removeItem(item);
+                    });
+                });
+            }
+        }
+        
+        // Event listeners
+        addBtn.addEventListener('click', () => {
+            const item = groceryInput.value.trim();
+            if (item) {
+                addItem(item);
+                groceryInput.value = '';
+                groceryInput.focus();
+            }
+        });
+        
+        removeBtn.addEventListener('click', () => {
+            const item = groceryInput.value.trim();
+            if (item) {
+                removeItem(item);
+                groceryInput.value = '';
+            }
+        });
+        
+        checkBtn.addEventListener('click', () => {
+            checkIfEmpty();
+        });
+        
+        // Allow adding items with Enter key
+        groceryInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const item = groceryInput.value.trim();
+                if (item) {
+                    addItem(item);
+                    groceryInput.value = '';
+                }
+            }
+        });
+        
+        // Initialize the app
+        renderGroceryList();
+    </script>
+</body>
+</html>

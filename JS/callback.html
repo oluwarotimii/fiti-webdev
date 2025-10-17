@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                // 1 Define a function that takes a callback
+        function greetUser(name, callback) {
+            console.log("Hello, " + name);
+            
+            // 2 Call the callback AFTER the greeting
+            callback();
+        }
+
+        //  3 Define another function to use as the callback
+        function sayGoodbye() {
+            console.log("Goodbye!");
+        }
+
+        //  4 Call greetUser and pass the callback function
+        greetUser("Rotimi", sayGoodbye);
+
+    </script>
+</body>
+</html>

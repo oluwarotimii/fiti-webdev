@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather APP</title>
+</head>
+<body>
+    <script>
+
+        async function getWeather(){
+          
+
+            try {
+
+                const cityName = prompt("ENTER THE CITY NAME")
+                console.log(cityName)
+                const apiKey = 'f738f4f71aebad731e49a4220203338f'; 
+                console.log(apiKey)
+
+                if(!cityName){
+                    console.log("PLEASE ENTER A CITY NAME")
+                }
+                console.log("CITY NAME RECIEVED LOADING NOWW!!!!")
+
+                const apiResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
+                if(!apiResponse.ok) {
+                    console.log("ERROR INVALID CITY  NAME")
+                }
+                
+                const data = apiResponse.json()
+                console.log(data) 
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        getWeather()
+    </script>
+</body>
+</html>

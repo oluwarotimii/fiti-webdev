@@ -1,0 +1,28 @@
+body{
+    background: #000000;
+    width: 100%;
+    display: flex;
+}
+
+.box1{
+    background-color: green;
+    width: 40%;
+    height: 200px
+}
+.box2{
+    background-color: blue;
+    width: 20%;
+    height: 200px
+    
+     
+}
+.box3{
+    background-color: white;
+     width: 20%;
+      height: 200px
+}
+.box4{
+    background-color: orange;
+     width: 20%;
+      height: 200px
+}

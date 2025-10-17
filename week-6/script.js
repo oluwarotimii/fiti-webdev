@@ -3,7 +3,8 @@ let students = [
     { name: "Alice Johnson", age: 16, grade: "A" },
     { name: "Bob Smith", age: 17, grade: "B" },
     { name: "Carol Davis", age: 16, grade: "A+" }
-];
+]; 
+
 
 // Function to display students
 function displayStudents() {
@@ -19,6 +20,7 @@ function displayStudents() {
         studentList.appendChild(li);
     });
 }
+
 
 
 
@@ -40,10 +42,10 @@ function addStudent(event) {
     
     // Reset form
     document.getElementById('studentForm').reset();
-    
+    console.log(newStudent)
     // Update display
-    displayStudents();
-    updateStats();
+    // displayStudents();
+    // updateStats();
 }
 
 // Function to remove a student
@@ -51,7 +53,10 @@ function removeStudent(index) {
     students.splice(index, 1);
     displayStudents();
     updateStats();
+    // students.pop()
 }
+
+
 
 // Function to update stat
 function updateStats() {
@@ -68,7 +73,7 @@ function updateStats() {
     });
     
     const statsDiv = document.getElementById('stats');
-    statsDiv.innerHTML = `
+    statsDiv.innerHTML = ` 
         <p><strong>Total Students:</strong> ${totalStudents}</p>
         <p><strong>Average Age:</strong> ${averageAge}</p>
         <p><strong>Grade Distribution:</strong></p>
@@ -82,6 +87,7 @@ function updateStats() {
 
 // Add event listener to the form
 document.getElementById('studentForm').addEventListener('submit', addStudent);
+
 
 // Initialize the page
 displayStudents();

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple DOM Examples</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .example { margin: 15px 0; padding: 10px; border: 1px solid #ccc; }
+        button { padding: 5px 10px; margin: 5px; }
+        .highlight { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1>DOM Examples</h1>
+    
+    <div class="example">
+        <h3>Change Text Content</h3>
+        <p id="text1">Original text</p>
+         <button onclick="btnClick()"> Change Text </button>
+   </div>
+    
+ <div class="example">
+        <h3>Change HTML</h3>
+        <div id="html1">Original HTML</div>
+        <button onclick="document.getElementById('html1').innerHTML='<em>New HTML</em>'">Change HTML</button>
+    </div>
+    
+        <div class="example">
+        <h3>Change Style</h3>
+        <div id="style1" style="padding: 10px; background-color: lightblue;">Styled element</div>
+        <button onclick="document.getElementById('style1').style.backgroundColor='lightgreen'">Change Color</button>
+    </div>
+    
+   <div class="example">
+        <h3>Add/Remove Class</h3>
+        <div id="class1">Element with class</div>
+        <button onclick="document.getElementById('class1').classList.add('highlight')">Add Class</button>
+        <button onclick="document.getElementById('class1').classList.remove('highlight')">Remove Class</button>
+    </div>
+    
+    <div class="example">
+        <h3>Change Attribute
+        <img id="img1" src="https://i.pinimg.com/736x/dc/1a/46/dc1a466f45f29941e4ec9d96223e7d46.jpg">
+        <br>
+        <button onclick="imgChange()">Change Image</button>
+    </div>
+    
+     <!--<div class="example">
+        <h3>Create Element</h3>
+        <ul id="list1">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+        <button onclick="addListItem()">Add Item</button>
+        <button onclick="removeListItem()">Remove Last</button>
+    </div>
+    
+    <div class="example">
+        <h3>Event Handling</h3>
+        <button id="btn1">Click Me!</button>
+        <p id="output"></p>
+    </div> -->
+
+    <script>
+
+        function btnClick() {
+            const para = document.getElementById("text1");
+            para.textContent = ` WELCOME`
+        }
+        function imgChange () {
+            const image = document.getElementById('img1');
+            image.src =`https://png.pngtree.com/png-vector/20230531/ourmid/pngtree-vector-art-cute-panda-bear-with-eyes-png-image_6785665.png
+            `
+        }
+        // function styleBtn () {
+        //     const sty
+        // }
+        // // Add item to list
+        // function addListItem() {
+        //     const list = document.getElementById('list1');
+        //     const newItem = document.createElement('li');
+        //     newItem.textContent = 'New Item';
+        //     list.appendChild(newItem);
+        // }
+        
+        // // Remove last item from list
+        // function removeListItem() {
+        //     const list = document.getElementById('list1');
+        //     if(list.lastChild) {
+        //         list.removeChild(list.lastChild);
+        //     }
+        // }
+        
+        // // Event handling example
+        // document.getElementById('btn1').addEventListener('click', function() {
+        //     document.getElementById('output').textContent = 'Button was clicked!';
+        // });
+    </script>
+</body>
+</html>

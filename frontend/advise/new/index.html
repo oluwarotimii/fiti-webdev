@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15s Adsive</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card text-center" data-aos="fade-up">
+            <h3 class="card-title">15 seconds Advise</h3>
+            <div class="advise-box mb-4">
+                <p id="advise-text"> Loading Adivse....</p>
+            </div>
+        </div>
+    </div>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js">
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+        })
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

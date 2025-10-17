@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Examples for Students</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        #textContent {
+            background-color: #e8f4fc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight {
+            background-color: yellow;
+            padding: 2px 4px;
+        }
+        
+        #dynamicList {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #dynamicList li {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        #formInput {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #d5f4e6;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DOM Manipulation Examples</h1>
+        <p>This page demonstrates various DOM manipulation techniques for educational purposes.</p>
+        
+        <div class="section">
+            <h2>1. Getting and Setting Text Content</h2>
+            <p id="textContent">This paragraph will be manipulated using DOM methods.</p>
+            <button class="btn" onclick="changeText()">Change Text</button>
+            <button class="btn" onclick="restoreText()">Restore Text</button>
+        </div>
+        
+        <div class="section">
+            <h2>2. Working with HTML Elements</h2>
+            <div id="htmlContent">
+                <p>This is <strong>original HTML content</strong>.</p>
+            </div>
+            <button class="btn" onclick="changeHTML()">Change HTML</button>
+            <button class="btn" onclick="addHTML()">Add HTML</button>
+        </div>
+        
+        <div class="section">
+            <h2>3. Modifying CSS Properties</h2>
+            <div id="styleBox" style="width: 200px; height: 100px; background-color: lightblue; border: 1px solid #ccc;">
+                This box will be styled using DOM methods
+            </div>
+            <button class="btn" onclick="changeStyle()">Change Style</button>
+            <button class="btn" onclick="addStyleClass()">Add Class</button>
+            <button class="btn" onclick="removeStyleClass()">Remove Class</button>
+        </div>
+        
+        <div class="section">
+            <h2>4. Working with Attributes</h2>
+            <img id="myImage" src="https://via.placeholder.com/150" alt="Placeholder Image" style="width: 150px; height: 150px;">
+            <br>
+            <button class="btn" onclick="changeAttribute()">Change Image</button>
+            <button class="btn" onclick="getAttributeValue()">Log Alt Attribute</button>
+        </div>
+        
+        <div class="section">
+            <h2>5. Creating and Removing Elements</h2>
+            <ul id="dynamicList">
+                <li>Initial item 1</li>
+                <li>Initial item 2</li>
+            </ul>
+            <button class="btn" onclick="addElement()">Add Element</button>
+            <button class="btn" onclick="removeElement()">Remove Last Element</button>
+        </div>
+        
+        <div class="section">
+            <h2>6. Event Handling</h2>
+            <input type="text" id="formInput" placeholder="Type something and press Enter">
+            <button class="btn" onclick="submitForm()">Submit</button>
+            <div id="result" class="result"></div>
+        </div>
+        
+        <div class="section">
+            <h2>7. Traversing the DOM</h2>
+            <ul id="traversalList">
+                <li>First item</li>
+                <li id="targetItem">Target item (click me!)</li>
+                <li>Third item</li>
+            </ul>
+            <button class="btn" onclick="traverseDOM()">Traverse DOM</button>
+            <div id="traversalResult" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Initial text to restore later
+        const initialText = document.getElementById('textContent').textContent;
+        
+        // 1. Getting and Setting Text Content
+        function changeText() {
+            const textElement = document.getElementById('textContent');
+            textElement.textContent = 'Text has been changed using DOM manipulation!';
+        }
+        
+        function restoreText() {
+            const textElement = document.getElementById('textContent');
+            textElement.textContent = initialText;
+        }
+        
+        // 2. Working with HTML Elements
+        function changeHTML() {
+            const htmlElement = document.getElementById('htmlContent');
+            htmlElement.innerHTML = '<p>HTML content has been <span class="highlight">completely replaced</span>!</p>';
+        }
+        
+        function addHTML() {
+            const htmlElement = document.getElementById('htmlContent');
+            htmlElement.innerHTML += '<p>Additional HTML content appended.</p>';
+        }
+        
+        // 3. Modifying CSS Properties
+        function changeStyle() {
+            const styleBox = document.getElementById('styleBox');
+            styleBox.style.backgroundColor = '#e74c3c';
+            styleBox.style.color = 'white';
+            styleBox.style.fontSize = '18px';
+            styleBox.style.textAlign = 'center';
+        }
+        
+        function addStyleClass() {
+            const styleBox = document.getElementById('styleBox');
+            styleBox.classList.add('highlight');
+        }
+        
+        function removeStyleClass() {
+            const styleBox = document.getElementById('styleBox');
+            styleBox.classList.remove('highlight');
+        }
+        
+        // 4. Working with Attributes
+        function changeAttribute() {
+            const imageElement = document.getElementById('myImage');
+            // Change to a different placeholder image
+            imageElement.src = 'https://via.placeholder.com/150/3498db/ffffff?text=New+Image';
+            imageElement.alt = 'New Placeholder Image';
+        }
+        
+        function getAttributeValue() {
+            const imageElement = document.getElementById('myImage');
+            console.log('Alt attribute value:', imageElement.getAttribute('alt'));
+            alert('Alt attribute: ' + imageElement.getAttribute('alt'));
+        }
+        
+        // 5. Creating and Removing Elements
+        function addElement() {
+            const list = document.getElementById('dynamicList');
+            const newItem = document.createElement('li');
+            newItem.textContent = `New item added at ${new Date().toLocaleTimeString()}`;
+            list.appendChild(newItem);
+        }
+        
+        function removeElement() {
+            const list = document.getElementById('dynamicList');
+            if (list.children.length > 0) {
+                list.removeChild(list.lastChild);
+            }
+        }
+        
+        // 6. Event Handling
+        function submitForm() {
+            const inputElement = document.getElementById('formInput');
+            const resultElement = document.getElementById('result');
+            
+            if (inputElement.value.trim() !== '') {
+                resultElement.textContent = `You entered: ${inputElement.value}`;
+                resultElement.style.display = 'block';
+                inputElement.value = ''; // Clear the input
+            } else {
+                resultElement.textContent = 'Please enter some text!';
+                resultElement.style.display = 'block';
+            }
+        }
+        
+        // Handle Enter key in the form input
+        document.getElementById('formInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                submitForm();
+            }
+        });
+        
+        // 7. Traversing the DOM
+        function traverseDOM() {
+            const targetElement = document.getElementById('targetItem');
+            const resultElement = document.getElementById('traversalResult');
+            
+            let traversalInfo = '';
+            
+            // Parent node
+            traversalInfo += `<p>Parent node tag: <strong>${targetElement.parentNode.tagName}</strong></p>`;
+            
+            // First child
+            const firstChild = targetElement.parentNode.firstElementChild;
+            traversalInfo += `<p>First child: <strong>${firstChild.textContent}</strong></p>`;
+            
+            // Next sibling
+            if (targetElement.nextElementSibling) {
+                traversalInfo += `<p>Next sibling: <strong>${targetElement.nextElementSibling.textContent}</strong></p>`;
+            }
+            
+            // Previous sibling
+            if (targetElement.previousElementSibling) {
+                traversalInfo += `<p>Previous sibling: <strong>${targetElement.previousElementSibling.textContent}</strong></p>`;
+            }
+            
+            // Number of children in parent
+            traversalInfo += `<p>Number of list items: <strong>${targetElement.parentNode.children.length}</strong></p>`;
+            
+            resultElement.innerHTML = traversalInfo;
+            resultElement.style.display = 'block';
+        }
+        
+        // Example of adding a click event directly to the target item
+        document.getElementById('targetItem').addEventListener('click', function() {
+            alert('Target item was clicked!');
+        });
+        
+        // Additional example: Query selectors
+        console.log('Examples of query selectors:');
+        console.log('All list items:', document.querySelectorAll('li'));
+        console.log('Elements with class "btn":', document.querySelectorAll('.btn'));
+        console.log('First button:', document.querySelector('.btn'));
+    </script>
+</body>
+</html>

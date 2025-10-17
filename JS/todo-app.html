@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> To-Do List App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .input-group { display: flex; margin-bottom: 20px; }
+        #taskInput { flex: 1; padding: 10px; margin-right: 10px; }
+        button { padding: 10px 15px; cursor: pointer; }
+        .task { 
+            padding: 10px; 
+            margin: 5px 0; 
+            background-color: #f9f9f9; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+        }
+        .task.completed { text-decoration: line-through; color: gray; }
+        .filter-buttons { margin: 15px 0; }
+        .filter-btn { margin-right: 10px; }
+        .storage-info { margin-top: 20px; padding: 10px; background-color: #e9e9e9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List Application</h1>
+        
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn" data-filter="all">All Tasks</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" id="clearCompletedBtn">Clear Completed</button>
+        </div>
+        
+        <div id="taskList"></div>
+        
+        <div class="storage-info">
+            <p>Tasks are saved to localStorage and will persist after page refresh.</p>
+            <button id="clearAllBtn">Clear All Tasks</button>
+        </div>
+    </div>
+
+    <script>
+        // DOM elements
+        const taskInput = document.getElementById('taskInput');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const taskList = document.getElementById('taskList');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const clearCompletedBtn = document.getElementById('clearCompletedBtn');
+        const clearAllBtn = document.getElementById('clearAllBtn');
+        
+        // Current filter state
+        let currentFilter = 'all';
+        
+        // Load tasks from localStorage
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        
+        
+        // Function to save tasks to localStorage
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+        
+        // Function to render tasks based on current filter
+        function renderTasks() {
+            taskList.innerHTML = '';
+            
+            let filteredTasks = tasks;
+            if (currentFilter === 'active') {
+                filteredTasks = tasks.filter(task => !task.completed);
+            } else if (currentFilter === 'completed') {
+                filteredTasks = tasks.filter(task => task.completed);
+            }
+             
+            filteredTasks.forEach((task, index) => {
+                const taskElement = document.createElement('div');
+                taskElement.className = `task ${task.completed ? 'completed' : ''}`;
+                taskElement.innerHTML = `
+                    <span>${task.text}</span>
+                    <div>
+                        <button class="toggle-btn">${task.completed ? 'Undo' : 'Complete'}</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                `;
+                
+                // Add event listeners for the buttons
+                const toggleBtn = taskElement.querySelector('.toggle-btn');
+                const deleteBtn = taskElement.querySelector('.delete-btn');
+                
+                toggleBtn.addEventListener('click', () => {
+                    toggleTaskCompletion(index);
+                });
+                
+                deleteBtn.addEventListener('click', () => {
+                    deleteTask(index);
+                });
+                
+                taskList.appendChild(taskElement);
+            });
+        }
+        
+        // Function to add a new task
+        function addTask() {
+            const text = taskInput.valu e.trim();
+            if (text) {
+                tasks.push({
+                    text: text,
+                    completed: false,
+                    id: Date.now() // Unique ID based on timestamp
+                });
+                
+                saveTasks();
+                renderTasks();
+                taskInput.value = '';
+                taskInput.focus();
+            }
+        }
+        
+        // Function to toggle task completion
+        function toggleTaskCompletion(index) {
+            tasks[index].completed = !tasks[index].completed;
+            saveTasks();
+            renderTasks();
+        }
+        
+        // Function to delete a task n
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            saveTasks();
+            renderTasks();
+        }
+        
+        // Function to clear completed tasks
+        function clearCompletedTasks() {
+            tasks = tasks.filter(task => !task.completed);
+            saveTasks();
+            renderTasks();
+        }
+        
+        // Function to clear all tasks
+        function clearAllTasks() {
+            if (confirm('Are you sure you want to delete all tasks?')) {
+                tasks = [];
+                saveTasks();
+                renderTasks();
+            }
+        }
+        
+        // Event listeners
+        addTaskBtn.addEventListener('click', addTask);
+        
+        taskInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addTask();
+            }
+        });
+        
+        filterButtons.forEach(button => {
+            if (button.id !== 'clearCompletedBtn') {
+                button.addEventListener('click', () => {
+                    currentFilter = button.dataset.filter;
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+                    
+                    renderTasks();
+                });
+            }
+        });
+        
+        clearCompletedBtn.addEventListener('click', clearCompletedTasks);
+        clearAllBtn.addEventListener('click', clearAllTasks);
+        
+        // Initialize the app
+        renderTasks();
+    </script>
+</body>
+</html>
+
