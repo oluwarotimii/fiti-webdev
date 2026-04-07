@@ -10,24 +10,24 @@
 
 
     <script>
-        // Synchronous Example
-        // console.log("=== SYNCHRONOUS EXAMPLE ===");
-        // console.log("1. Order food");
-        // console.log("2. Wait for food");
-        // console.log("3. Eat food");
-        // console.log("My name is Andre Onana")
-        // console.log("Yaounde, Cameroun")
-        // console.log('Giving Manchester UNited fans, High Blood Pressure')
+    //     // Synchronous Example
+    //     console.log("=== SYNCHRONOUS EXAMPLE ===");
+    //     console.log("1. Order food");
+    //     console.log("2. Wait for food");
+    //     console.log("3. Eat food");
+    //     console.log("My name is Andre Onana")
+    //     console.log("Yaounde, Cameroun")
+    //     console.log('Giving Manchester UNited fans, High Blood Pressure')
 
-        // console.log('Zubimendi passes to Saka')
-        // setTimeout(() => {
-        //     console.log("OHHHHHHHH! WHAT WONDERFUL GOAL!!!!!!! ")
-        // }, 1500);
-        // console.log("Saka Shoots!")
+    //     console.log('Zubimendi passes to Saka')
+    //     setTimeout(() => {
+    //         console.log("OHHHHHHHH! WHAT WONDERFUL GOAL!!!!!!! ")
+    //     }, 1500);
+    //     console.log("Saka Shoots!")
         
     
         
-        // Asynchronous Example
+    //     // Asynchronous Example
     //     console.log("\n=== ASYNCHRONOUS EXAMPLE ===");
     //     console.log("1. Order food");
 
@@ -37,76 +37,143 @@
 
     //     console.log("3. Keep chatting with friends");
 
-        // // Promise Example
-        console.log("\n=== PROMISE EXAMPLE ===");
-        // const foodOrder = new Promise((resolve, reject) => {
-        //     const success = false; // try changing this to false
-        //     if (success) {
-        //         resolve("🍔 Your food is ready!");
-        //     } else {
-        //         reject("❌ Sorry, we're out of food.");
-        //     }
-        // });
-        // foodOrder
-        //     .then(message => console.log(message))
-        //     .catch(error => console.log(error));
+    //     // // Promise Example
+    //     console.log("\n=== PROMISE EXAMPLE ===");
+    //         const foodOrder = new Promise((resolve, reject) => {
+    //             const success = false; // try changing this to false
+    //             if (success) {
+    //                 resolve("🍔 Your food is ready!");
+    //             } else {
+    //                 reject("❌ Sorry, we're out of food.");
+    //             }
+    //         });
+    //         foodOrder
+    //             .then(message => console.log(message))
+    //             .catch(error => console.log(error));
 
-    //   const ballCheck = new Promise((resolve, reject) => {
-    //     const isBlack = false;
-    //     if(isBlack){
-    //         // console.log("THERE ARE BLACK BALLS IN THE BOX")
-    //         resolve("HERE ARE BLACK BALLS IN THE BOX")
-    //     } else {
-    //         // console.log("NO BLACK BALLS HERE")
-    //         reject("NO BLACK BALLS HERE")
+
+
+    //       const ballCheck = new Promise((resolve, reject) => {
+    //         const isBlack = false;
+    //         if(isBlack){
+    //             // console.log("THERE ARE BLACK BALLS IN THE BOX")
+    //             resolve("HERE ARE BLACK BALLS IN THE BOX")
+    //         } else {
+    //             // console.log("NO BLACK BALLS HERE")
+    //             reject("NO BLACK BALLS HERE")
+    //         }
+    //       })
+
+    //       ballCheck
+    //         .then(message => console.log(message))
+    //         .catch(error => console.log(error))
+
+
+
+
+    //     // Async/Await Example
+    //     console.log("\n=== ASYNC/AWAIT EXAMPLE ===");
+    //     async function orderFood() {
+    //         try {
+    //             const message = await foodOrder;
+    //             console.log(message);
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
     //     }
-    //   })
 
-    //   ballCheck
-    //     .then(message => console.log(message))
-    //     .catch(error => console.log(error))
+    //     orderFood();
 
-        // Async/Await Example
-        console.log("\n=== ASYNC/AWAIT EXAMPLE ===");
-        async function orderFood() {
-            try {
-                const message = await foodOrder;
-                console.log(message);
-            } catch (error) {
-                console.log(error);
-            }
+
+
+    //     // Real Example - Fetching Data
+    //     console.log("\n=== FETCH DATA EXAMPLE ===");
+    //     async function getUser() {
+    //         console.log("Fetching user...");
+    //         // Using a mock function since we can't make actual fetch in this example
+    //         const user = { name: "John Doe" };
+    //         console.log("User:", user.name);
+    //     }
+
+    //     getUser();
+
+    //     function getU() {
+    //         console.log("FETCHING USER")
+    //    }
+    //    getU()
+
+    //    async function jokes() {
+    //     console.log("WELCOME TO MY JOKES CONSOLE!")
+    //     const jokesData = {
+    //             type: "general",
+    //             setup: "What do you call a pile of cats?",
+    //             punchline: "A Meowtain.",
+    //             id: 214 
+    //         }
+    //         console.log('THE JOKE IS :', jokesData.setup )
+
+    //         setTimeout(() =>{
+    //             console.log(jokesData.punchline)
+    //         }, 5000)
+    //         console.log("Waiting for punchline..")
+    //    }
+    //    jokes()
+
+
+
+
+
+    async function Jokes() {
+        console.log("WELCOME TO JOKES AND PUNCHLINE")
+        const jokeData ={
+            type: "general",             
+            setup: "What do you call a pile of cats?",            
+            punchline: "A Meowtain.",
+            id: 214 
         }
 
-        orderFood();
+        console.log('JOKE: ', jokeData.setup)
 
-        // Real Example - Fetching Data
-        console.log("\n=== FETCH DATA EXAMPLE ===");
-        async function getUser() {
-            console.log("Fetching user...");
-            // Using a mock function since we can't make actual fetch in this example
-            const user = { name: "John Doe" };
-            console.log("User:", user.name);
+        setTimeout(() =>{
+            console.log(jokeData.punchline)
+        }, 5000)
+       
+
+    }
+    Jokes()
+
+
+
+
+
+
+ const studenData ={
+            name: "Kamal Taoheed",             
+            favorite: "Computer Studies",            
+            drink: "Hollandia",
+            flavour: "Vanilla",
+            school: "Thomas Adewumi University",
+            id: 214 
         }
 
-        getUser();
 
-       async function jokes() {
-        console.log("WELCOME TO MY JOKES CONSOLE!")
-        const jokesData = {
-                type: "general",
-                setup: "What do you call a pile of cats?",
-                punchline: "A Meowtain.",
-                id: 214 
-            }
-            console.log('THE JOKE IS :', jokesData.setup )
 
-            setTimeout(() =>{
-                console.log(jokesData.punchline)
-            }, 5000)
-            console.log("Waiting for punchline..")
-       }
-       jokes()
-    //    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // //    
         // // Complete fetch example (uncomment to run with real API)
         
         // async function getRealUser() {
@@ -119,15 +186,15 @@
         
         // getRealUser();
         
-            async function liveUsers(){
-                console.log("LET US GET SOME REAL USERS")
-                const apiResponse = await fetch('https://jsonplaceholder.typicode.com/users/1')
-                const user = await apiResponse.json()
-                console.log("THE USER IS : ", user.name, 'Email is : ', user.email)
-                // const address = await user.json()  console.log("City is ", user.address.city)
-            }
+            // async function liveUsers(){
+            //     console.log("LET US GET SOME REAL USERS")
+            //     const apiResponse = await fetch('https://jsonplaceholder.typicode.com/users/1')
+            //     const user = await apiResponse.json()
+            //     console.log("THE USER IS : ", user.name, 'Email is : ', user.email)
+            //     // const address = await user.json()  console.log("City is ", user.address.city)
+            // }
 
-            liveUsers()
+            // liveUsers()
         // async
     </script>
 </body>

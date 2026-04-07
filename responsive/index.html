@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Responsiveness and Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="custom-bg-primary text-center py-5">
+        <div class="container">
+            <h1>Understanding Responsiveness and Bootstrap</h1>
+            <p class="lead">A simple guide to responsive web design and Bootstrap framework</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="mb-5">
+            <h2>What is Responsive Web Design?</h2>
+            <p>Responsive web design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. The most common way to achieve responsiveness is through:</p>
+            <ul>
+                <li>Flexible grids and layouts</li>
+                <li>Images that scale appropriately</li>
+                <li>CSS media queries to target different devices</li>
+            </ul>
+        </section>
+
+        <section class="mb-5">
+            <h2>What is Bootstrap?</h2>
+            <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.</p>
+        </section>
+
+        <section class="mb-5">
+            <h2>Key Bootstrap Concepts</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Grid System</h4>
+                    <p>Bootstrap's grid system is built on a 12-column layout that adapts to different screen sizes using CSS classes.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Breakpoints</h4>
+                    <p>Bootstrap includes breakpoints for different devices: xs (extra small), sm (small), md (medium), lg (large), and xl (extra large).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2>Bootstrap Grid System Example</h2>
+            <div class="row mb-3">
+                <div class="col-12 col-md-4 custom-bg-info p-3">
+                    <h5>Column 1</h5>
+                    <p>This column takes 100% width on mobile and 1/3 width on medium screens and up.</p>
+                </div>
+                <div class="col-12 col-md-4 custom-bg-warning p-3">
+                    <h5>Column 2</h5>
+                    <p>This column takes 100% width on mobile and 1/3 width on medium screens and up.</p>
+                </div>
+                <div class="col-12 col-md-4 custom-bg-success p-3">
+                    <h5>Column 3</h5>
+                    <p>This column takes 100% width on mobile and 1/3 width on medium screens and up.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2>Responsive Utilities</h2>
+            <div class="d-flex flex-column flex-md-row">
+                <div class="custom-bg-primary p-3 m-2">This div stacks vertically on small screens and becomes horizontal on medium screens and above.</div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2>More Responsive Examples</h2>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Small Device</h5>
+                            <p class="card-text">Takes 100% width on all screens</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Medium Device</h5>
+                            <p class="card-text">Takes 50% width on sm and above, 100% on xs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Large Device</h5>
+                            <p class="card-text">Takes 25% width on lg and above, 50% on sm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Extra Large</h5>
+                            <p class="card-text">Takes 25% width on lg and above, 50% on sm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2>Bootstrap Properties and Definitions</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Grid Classes</h4>
+                    <ul>
+                        <li><strong>col-</strong>: Base column class</li>
+                        <li><strong>col-{breakpoint}-{n}</strong>: Sets width for specific breakpoint</li>
+                        <li><strong>col-1</strong> to <strong>col-12</strong>: Column widths (1/12 to 12/12)</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Breakpoints</h4>
+                    <ul>
+                        <li><strong>xs</strong>: Extra small (&lt;576px)</li>
+                        <li><strong>sm</strong>: Small (≥576px)</li>
+                        <li><strong>md</strong>: Medium (≥768px)</li>
+                        <li><strong>lg</strong>: Large (≥992px)</li>
+                        <li><strong>xl</strong>: Extra large (≥1200px)</li>
+                        <li><strong>xxl</strong>: Extra extra large (≥1400px)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4>Utility Classes</h4>
+                    <ul>
+                        <li><strong>d-flex</strong>: Creates a flexbox container</li>
+                        <li><strong>d-none</strong>: Hides element</li>
+                        <li><strong>d-{breakpoint}-block</strong>: Shows element at specific breakpoint</li>
+                        <li><strong>text-{breakpoint}-center</strong>: Centers text at breakpoint</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Container Classes</h4>
+                    <ul>
+                        <li><strong>.container</strong>: Fixed width container (responsive)</li>
+                        <li><strong>.container-fluid</strong>: Full width container</li>
+                        <li><strong>.container-{breakpoint}</strong>: Container that changes max-width at breakpoints</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="custom-bg-primary text-center py-4">
+        <div class="container">
+            <p>Simple Guide to Responsiveness and Bootstrap | Created for Educational Purposes</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

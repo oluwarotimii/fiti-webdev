@@ -71,12 +71,12 @@
         function renderTasks() {
             taskList.innerHTML = '';
             
-            let filteredTasks = tasks;
-            if (currentFilter === 'active') {
-                filteredTasks = tasks.filter(task => !task.completed);
-            } else if (currentFilter === 'completed') {
-                filteredTasks = tasks.filter(task => task.completed);
-            }
+            // let filteredTasks = tasks;
+            // if (currentFilter === 'active') {
+            //     filteredTasks = tasks.filter(task => !task.completed);
+            // } else if (currentFilter === 'completed') {
+            //     filteredTasks = tasks.filter(task => task.completed);
+            // }
              
             filteredTasks.forEach((task, index) => {
                 const taskElement = document.createElement('div');
@@ -87,7 +87,7 @@
                         <button class="toggle-btn">${task.completed ? 'Undo' : 'Complete'}</button>
                         <button class="delete-btn">Delete</button>
                     </div>
-                `;
+                `; 
                 
                 // Add event listeners for the buttons
                 const toggleBtn = taskElement.querySelector('.toggle-btn');
@@ -107,7 +107,7 @@
         
         // Function to add a new task
         function addTask() {
-            const text = taskInput.valu e.trim();
+            const text = taskInput.value.trim();
             if (text) {
                 tasks.push({
                     text: text,

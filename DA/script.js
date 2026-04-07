@@ -45,7 +45,7 @@ cityDropdown.addEventListener('change', function() {
     }
 });
 
-// Allow Enter key to trigger search
+// Allow Enter key to trigg+er search
 cityInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         searchWeather();

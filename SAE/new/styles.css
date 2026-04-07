@@ -1,0 +1,107 @@
+/* :root {
+    --snow: #fbf5f3ff;
+    --cambridge-blue: #8daa9dff;
+    --violet-jtc: #522b47ff;
+    --claret: #7b0828ff;
+    --night: #0f0e0eff;
+    --mindaro: #d6f49dff;
+    --citrine: #ead637ff;
+    --satin-sheen-gold: #cba328ff;
+    --licorice: #230c0fff;
+    --tiffany-blue: #a2d3c2ff;
+}
+
+body {
+    background-color: var(--night);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    border: red 2px solid;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.box {
+    height: 20rem;
+    border: 2px solid white;
+    margin: 2rem;
+}
+
+.box1 {
+    background-color: var(--satin-sheen-gold) ;
+}
+
+.box2 {
+    background-color: var(--citrine) ;
+}
+
+.box3 {
+    background-color: var(--licorice) ;
+}
+
+.box4 {
+    background-color: var(--mindaro) ;
+}
+
+.box5 {
+    background-color: var(--violet-jtc) ;
+}
+
+.box6 {
+    background-color: var(--snow) ;
+}
+
+.box7 {
+    background-color: white ;
+}
+
+@media (max-width:1024px) {
+.box {
+    height: 20rem;
+    border: 2px solid white;
+    margin: 2rem;
+}
+
+.box1 {
+    background-color: var(--claret);
+}
+
+.box2 {
+    background-color: var(--satin-sheen-gold);
+}
+
+.box3 {
+    background-color: var(--night);
+}
+
+.box4 {
+    background-color: var(--citrine);
+}
+
+.box5 {
+    background-color: white ;
+}
+
+.box6 {
+    background-color: var(--licorice);
+}
+
+.box7 {
+    background-color: lightcoral;
+} */
+
+.alert{
+    width: 20%;
+}
+
+nav{
+    background-color: red;
+}

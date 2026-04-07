@@ -1,0 +1,179 @@
+Femtech Frontend Training Test
+
+Topics: HTML, CSS, Bootstrap & AOS Library
+Time: 45 minutes          Total Marks: 45
+
+INSTRUCTION: Answer all questions. Each objective question carries 1 mark.
+
+SECTION A - OBJECTIVE QUESTIONS (40 Marks)
+
+1. What does CDN stand for in web development?
+   A. Central Data Network B. Content Delivery Network C. Cascading Design Node D. Content Data Notation
+
+2. Which property adds space inside an element's border?
+   A. margin B. padding C. spacing D. gap
+
+3. Which tag defines a paragraph?
+   A. <p> B. <para> C. <pg> D. <text>
+
+4. To use AOS, which files must be linked?
+   A. aos.css and aos.js B. animate.css C. motion.js D. effect.css
+
+5. What does HTML stand for?
+   A. HyperText Make Language B. HyperText Markup Language C. HighText Machine Language D. Hyper Tool Multi Language
+
+6. The main purpose of a Bootstrap container is to:
+   A. Wrap content neatly on the page B. Add color C. Create animations D. Change font styles
+
+7. Which CSS rule makes text bold?
+   A. font-weight: bold; B. text-style: bold; C. text-weight: bold; D. font-style: bold;
+
+8. Which attribute defines the animation effect?
+   A. data-aos B. aos-type C. animation D. effect-aos
+
+9. Which tag shows the largest heading?
+   A. <h6> B. <h3> C. <h1> D. <heading>
+
+10. How do you select a class in CSS?
+    A. #classname B. .classname C. classname D. *classname
+
+11. Which tag is used to create a hyperlink?
+    A. <link> B. <a> C. <href> D. <url>
+
+12. When do AOS effects become visible on a webpage?
+    A. When the element scrolls into view B. When the page loads C. When the user clicks D. When the page refreshes
+
+13. The property to align text to the center is what?
+    A. text-center B. align: center; C. text-align: center; D. center-text
+
+14. What is Bootstrap used for?
+    A. Building Android apps B. Designing responsive websites quickly C. Writing JavaScript faster D. Creating databases
+
+15. Which tag defines the start of an HTML document?
+    A. <doc> B. <start> C. <html> D. <web>
+
+16. Which element contains the visible page content?
+    A. <body> B. <head> C. <title> D. <html>
+
+17. What code is used to start AOS animations?
+    A. AOS.init(); B. AOS.start(); C. aos.run(); D. init.AOS();
+
+18. Which tag is used to insert an image?
+    A. <img> B. <image> C. <pic> D. <src>
+
+19. Which property changes text color?
+    A. font-color B. color C. text-style D. text-color
+
+20. How do you make a numbered list?
+    A. <ul> B. <ol> C. <list> D. <dl>
+
+21. You can get Bootstrap from:
+    A. Google Play B. Bootstrap's official website or CDN link C. Microsoft Store D. GitHub only
+
+22. What is the correct CSS syntax?
+    A. selector {property: value;} B. selector (property: value) C. selector [property: value] D. property: value {selector}
+
+23. Which HTML tag is used to insert a horizontal line?
+    A. <br> B. <hr> C. <line> D. <hline>
+
+24. What does CSS stand for?
+    A. Cascading Style Sheets B. Colorful Style Sheets C. Computer Styling System D. Creative Style Setup
+
+25. What attribute is used to give an element a unique name?
+    A. name B. id C. class D. type
+
+26. What property is used to change the background color?
+    A. bgcolor B. background C. background-color D. color-background
+
+27. What property changes font size?
+    A. text-size B. font-size C. font-style D. size
+
+28. Which tag is used to display a table?
+    A. <table> B. <tab> C. <tbl> D. <grid>
+
+29. The Bootstrap grid is divided into how many columns?
+    A. 8 B. 10 C. 12 D. 16
+
+30. Which of these is a correct comment in CSS?
+    A. // comment B. /* comment */ C. <!-- comment --> D. ** comment **
+
+31. What is AOS used for?
+    A. Create animations when scrolling B. Build forms C. Add buttons D. Host websites
+
+32. Which property is used to avoid repeating images when using them as a background?
+    A. background-repeat: no-repeat; B. background: no-repeat; C. repeat: none; D. image-repeat: no-repeat;
+
+33. Which attribute defines the destination of a hyperlink?
+    A. src B. link C. href D. url
+
+34. Why is Bootstrap popular?
+    A. It makes websites responsive and fast to design B. It replaces HTML C. It works only offline D. It builds animations automatically
+
+35. The <br> tag is used for what purpose?
+    A. A border B. A line break C. A blank row D. A new paragraph
+
+36. What does AOS stand for?
+    A. Animate On Scroll B. Animation On Site C. Animated Object System D. Animation or Scroll
+
+37. Which property sets the spacing between lines of text?
+    A. line-spacing B. text-spacing C. line-height D. text-height
+
+38. The <title> tag is written inside which section?
+    A. <body> B. <header> C. <head> D. <footer>
+
+39. What do you need to include in your HTML file to use Bootstrap?
+    A. Bootstrap CSS and JS links B. A .boot file C. Only HTML tags D. A database
+
+40. Which attribute sets animation delay?
+    A. data-aos-delay B. aos-delay C. animation-delay D. delay-aos
+
+SECTION B - THEORY QUESTIONS (5 Marks each)
+
+1. Explain what HTML is and why it is important in web development.
+2. What is the role of CSS, and how does it work with HTML?
+3. What is Bootstrap and why do developers use it?
+4. What is the purpose of a CDN and how does it help when using Bootstrap?
+5. How do you use the AOS library to add scroll animations to a webpage?
+
+ANSWER KEY (Objective Section)
+
+1. B
+2. B
+3. A
+4. A
+5. B
+6. A
+7. A
+8. A
+9. C
+10. B
+11. B
+12. A
+13. C
+14. B
+15. C
+16. A
+17. A
+18. A
+19. B
+20. B
+21. B
+22. A
+23. B
+24. A
+25. B
+26. C
+27. B
+28. A
+29. C
+30. B
+31. A
+32. A
+33. C
+34. A
+35. B
+36. A
+37. C
+38. C
+3                                                                                                                                9. A
+40. A

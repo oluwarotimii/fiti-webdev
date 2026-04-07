@@ -1,0 +1,24 @@
+:root {
+    --text-color: #313715ff;
+    --cocoa-brown: #d16014ff;
+    --moss-green: #939f5cff;
+    --olivine: #bbce8aff;
+    --bg-color: #e2f9b8ff;
+}
+
+.dark-theme {
+    --bg-color: #313715ff;
+    --cocoa-brown: #d16014ff;
+    --moss-green: #939f5cff;
+    --text-color: white;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: thistle;
+}

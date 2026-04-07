@@ -1,0 +1,7 @@
+.container {
+    min-height: calc(100vh - 80px); /* Full viewport height minus header height */
+    width: 100%;
+    max-width: 100% !important; /* Override Bootstrap's max-width */
+    padding: 0;
+    margin: 0;
+}

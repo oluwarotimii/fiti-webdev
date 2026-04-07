@@ -1,0 +1,355 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    /* Added to include padding/border in element's total width/height */
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Added font-family for consistency */
+}
+
+/* Container with responsive max-width */
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* Changed from implicit width to full width */
+    padding: 0 1rem;
+    /* Added horizontal padding for mobile spacing */
+}
+
+.top-bar {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 2rem;
+    width: 100%;
+    /* Changed from fixed 62% to full width */
+    max-width: 1200px;
+    /* Added max-width to maintain readability on large screens */
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.menu p {
+    /* border: 2px solid blue; */
+    font-size: 0.75rem;
+    /* Changed from 8px to relative unit (0.75rem = 12px at base 16px)  */
+}
+
+.date p {
+    /* border: 2px red solid; */
+    font-size: 0.75rem;
+    /* Changed from 8px to relative unit for better scaling */
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 0 1rem;
+    /* Added horizontal padding */
+}
+
+.heading img {
+    margin-top: 1rem;
+    max-width: 100%;
+    /* Added to ensure image reducesdown on smaller screens */
+    height: auto;
+    /* Added to maintain aspect ratio */
+}
+
+.nav-container {
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* Added full width */
+    padding: 0 1rem;
+    /* Added horizontal padding */
+}
+
+.menu-list {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 2rem;
+    width: 100%;
+    /* Changed from fixed 62% to full width */
+    max-width: 1200px;
+    /* Added max-width to maintain alignment with other elements */
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 0.5rem 1rem;
+    /* Fixed padding syntax and value */
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    /* Increased from 0.05rem for better visual spacing */
+    width: 100%;
+    /* Added to ensure proper distribution of list items */
+    margin: 0;
+    /* Reset default margin */
+    padding: 0;
+    /* Reset default padding */
+}
+
+li {
+    font-size: 0.75rem;
+    /* Changed from 12px to relative unit for better scaling */
+    font-weight: 400;
+    white-space: nowrap;
+    /* Added to prevent text wrapping on small screens */
+}
+
+
+.hero-container {
+    /* border: 2px red solid; */
+    /* height: 60vh; */
+    /* max-height: 800px; */
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hero {
+    /* border: 2px black solid; */
+    /* height: 60vh; */
+    /* max-height: 800px; */
+    width: 100%;
+    max-width: 1200px;
+}
+
+.hero-attributes {
+    /* border: 2px yellowgreen solid; */
+    /* height: 15vh; */
+    /* max-height: 100px; */
+    display: flex;
+
+}
+
+.attributes {
+    /* border: 2px rgb(255, 183, 0) solid; */
+    /* height: 10vh; */
+    /* max-height: 100px; */
+    width: 25%;
+    display: flex;
+    gap: 1rem;
+
+}
+
+.hero-img{
+    margin-top: 1rem;
+}
+.hero-img img{
+    width: 100%;
+    max-width: 1200px;
+    object-fit: contain;
+    height: 100%;
+    max-height: 580px ;
+}
+
+
+.attributes img {
+    width: 30%;
+}
+.attributes-text h1{
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.attributes-text p{
+    font-size: 0.5rem;
+    font-weight: 300;
+    line-height: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+
+    .container,
+    .nav-container {
+        padding: 0 0.5rem;
+        /* Reduced padding on smaller screens */
+    }
+
+    .top-bar {
+        padding: 0.5rem;
+        /* Adjusted padding */
+        flex-direction: column;
+        /* Stack date and menu vertically on small screens */
+        gap: 0.5rem;
+        /* Added gap between elements */
+        height: auto;
+        /* Allow height to adjust based on content */
+    }
+
+    .menu-list {
+        padding: 0.5rem;
+        /* Adjusted padding */
+        flex-wrap: wrap;
+        /* Allow menu items to wrap on small screens */
+        height: auto;
+        /* Allow height to adjust based on content */
+    }
+
+    ul {
+        flex-wrap: wrap;
+        /* Allow list items to wrap */
+        justify-content: center;
+        /* Center items when wrapping */
+    }
+
+    li {
+        font-size: 0.65rem;
+        /* Slightly smaller font on tablets */
+        margin: 0.25rem;
+        /* Add margin around items */
+    }
+
+    .menu p,
+    .date p {
+        font-size: 0.65rem;
+        /* Slightly smaller font on tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-bar {
+        flex-direction: row;
+        /* Switch back to row for very small screens */
+        justify-content: space-between;
+        /* Space items on small screens */
+    }
+
+    .date p,
+    .menu p {
+        font-size: 0.6rem;
+        /* Even smaller font on phones */
+    }
+
+    ul {
+        flex-direction: row;
+        /* Stack menu items vertically on very small screens */
+        align-items: center;
+        /* Center stacked items */
+    }
+
+    li {
+        font-size: 0.6rem;
+        /* Even smaller font on phones */
+        margin: 0.2rem 0;
+        /* Add vertical spacing only */
+    }
+
+    .hero-container {
+    /* border: 2px red solid; */
+    /* height: 60vh; */
+    /* max-height: 800px; */
+    margin-top: 0.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hero {
+    /* border: 2px black solid; */
+    /* height: 60vh; */
+    /* max-height: 800px; */
+    width: 100%;
+    max-width: 400px;
+}
+
+.hero-attributes {
+    /* border: 2px yellowgreen solid; */
+    /* height: 15vh; */
+    /* max-height: 100px; */
+    display: flex;
+
+}
+
+.attributes {
+    /* border: 2px rgb(255, 183, 0) solid; */
+    /* height: 10vh; */
+    max-height: 30px;
+    width: 25%;
+    display: flex;
+    margin-top: 0.5rem;
+    /* gap: 0.21rem; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero-img{
+    margin-top: 1rem;
+}
+.hero-img img{
+    width: 100%;
+    max-width: 400px;
+    object-fit: contain;
+    height: 100%;
+    max-height: 400px ;
+}
+
+
+.attributes img {
+    width: 30px;
+    /* max-width: 60px; */
+    height: 30px;
+    
+}
+.attributes-text h1{
+    font-size: 0.4em;
+    font-weight: 300;
+    /* border: 2px solid red; */
+
+  
+}
+
+.attributes-text p{
+    font-size: 0.5rem;
+    font-weight: 300;
+    /* line-height: 0.1rem; */
+      display: none;
+}
+
+}

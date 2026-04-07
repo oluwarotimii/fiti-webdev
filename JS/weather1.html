@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather APP</title>
 </head>
+
 <body>
     <script>
 
-        async function getWeather(){
-          
+        async function getWeather() {
+
 
             try {
 
                 const cityName = prompt("ENTER THE CITY NAME")
                 console.log(cityName)
-                const apiKey = 'f738f4f71aebad731e49a4220203338f'; 
+                const apiKey = 'f738f4f71aebad731e49a4220203338f';
                 console.log(apiKey)
 
-                if(!cityName){
+                if (!cityName) {
                     console.log("PLEASE ENTER A CITY NAME")
                 }
                 console.log("CITY NAME RECIEVED LOADING NOWW!!!!")
 
                 const apiResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
-                if(!apiResponse.ok) {
+                if (!apiResponse.ok) {
                     console.log("ERROR INVALID CITY  NAME")
                 }
-                
-                const data = apiResponse.json()
-                console.log(data) 
+
+                const data = await apiResponse.json()
+                // console.log(data.main.temp)
+                console.log(data)
             } catch (error) {
                 console.log(error)
             }
         }
 
+
+
+
         getWeather()
+
+// async function test() {
+//   const apiUrl = "https://dogapi.dog/api/v2/breeds?page[size]=10";
+//   const dog = await fetch(apiUrl);
+//   const response = await dog.json();
+
+//   console.log(response.data);
+//   console.log("Breeds count:", response.data.length);
+
+//   response.data.forEach(breed => {
+//     console.log("Name:", breed.attributes.name);
+//     console.log("Description:", breed.attributes.description);
+//     console.log("Life Expectancy:", breed.attributes.life?.min, "...", breed.attributes.life?.max);
+//     console.log("Male Weight:", breed.attributes.male_weight?.min, "..", breed.attributes.male_weight?.max);
+//     console.log("Female Weight:", breed.attributes.female_weight?.min, "...", breed.attributes.female_weight?.max);
+  
+
+// test();
+
+
+
+
     </script>
 </body>
+
 </html>
+<!-- https://dogapi.dog/api/v2/breeds?page[size]=10
+const dog = await fetch (apiUrl)
+const response = await dog.json()
+console.log = response -->

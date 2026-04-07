@@ -1,0 +1,86 @@
+:root {
+    --oxford-blue: #001427ff;
+    --hookers-green: #708d81ff;
+    --jasmine: #f4d58dff;
+    --engineering-orange: #bf0603ff;
+    --dark-red: #8d0801ff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* body{
+    background-color: var(--oxford-blue);
+} */
+
+.nav {
+    border-bottom: 1px black solid;
+    align-items: center;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--oxford-blue);
+    color: white;
+}
+.nav-links{
+    color: white;
+}
+
+.links {
+    justify-content: center;
+    display: flex;
+}
+
+.bi {
+    padding-right: 5px;
+}
+
+main{
+    height: 90vh;
+    background-color: var(--hookers-green);
+    width: 100%;
+    background-image: url('https://images.pexels.com/photos/60013/desert-drought-dehydrated-clay-soil-60013.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    /* opacity: 0.4; */
+    display: flex;
+}
+
+.hero-contents{
+    /* border: 2px solid red; */
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: var(--oxford-blue);
+    margin: 0, auto;
+    flex-direction: column;
+}
+
+.hero-contents h2{
+    font-size: 5rem;
+}
+
+.hero-contents p {
+    font-size: 2rem;
+}
+
+.hero-btn{
+    margin-top: 30px;
+    height: 70px;
+    width: 25%;
+    background-color: rgba(189, 38, 38, 0);
+    opacity: 1;
+    color: var(--oxford-blue);
+    border-radius: 20px;
+}
+
+.hero-btn:hover{
+    background-color: var(--oxford-blue);
+    color: white;
+    transform: scaleX(1.1);
+}

@@ -1,6 +1,6 @@
 // Track event counts in an object
 const eventCounts = {
-  click: 0,
+  click:0,
   dblclick: 0,
   mouseover: 0,
   keydown: 0,
@@ -8,7 +8,9 @@ const eventCounts = {
   focus: 0,
   blur: 0,
   submit: 0,
-  change: 0
+  change: 0,
+  Titi: 0,
+  Micheal: 0,
 };
 
 // Get counter display element
@@ -28,17 +30,41 @@ updateCounters();
 // === Event Handlers ===
 
 // Click
-document.getElementById("clickBox").addEventListener("click", () => {
+// document.getElementById("clickBox").addEventListener("click", () => {
+//   eventCounts.click++;
+//   updateCounters();
+// });
+
+// document.getElementById('clickbox').addEventListener('click')
+clickBox.addEventListener('click', () => {
   eventCounts.click++;
   updateCounters();
-});
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Double Click
 document.getElementById("dblClickBox").addEventListener("dblclick", () => {
   eventCounts.dblclick++;
   updateCounters();
 });
-
+addEventListener
 // Mouseover (hover)
 document.getElementById("hoverBox").addEventListener("mouseover", () => {
   eventCounts.mouseover++;
@@ -81,3 +107,6 @@ document.getElementById("submitForm").addEventListener("submit", (e) => {
 
 
 
+const task = document.getElementById('taskName')
+let money = 'Pound Sterling'
+task. innerHTML = money;

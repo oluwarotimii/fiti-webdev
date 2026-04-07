@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Asynchronous</title>
 </head>
 <body>
     <script>
@@ -17,52 +17,85 @@
         console.log('Serving Food!')
         console.log('Order Recieved!')
 
+
+
+
+          console.log('============ FOOD ORDER =================')
         console.log('Step 1 - Order the food')
 
             // ASYNC CODE
-        setTimeout(() => {
-            console.log("2 - Food is ready")
-        }, 10000);
+      setTimeout(() => {
+        console.log("Step 2: FOOD IS READY")
+      }, 5000);
         console.log("Food is Cooking")
 
-            // PROMISES
-        const foodOrder = new Promise((resolve, reject) => {
-            console.log('============ FOOD ORDER =================')
-            const success = true;
-            if(success){
-                resolve("Food is Ready")
-                console.log("Food is Ready");
-            } else {
-                reject('Order not Successful');
-                console.log('Order not Successful');
-            }
-        })
-        foodOrder
-            .then( message => console.log(message))
-            .catch(message => console.log(error))
 
 
-            const black =  new Promise((resolve, reject) =>{
-                const isTrue = false;
-                if(isTrue) {
-                    resolve(" THERE ARE 10 BLACK BALLS IN THE ROOM")
-                } else (
-                    reject("THERE ARE NO BLACK BALLS IN THE ROOM")
-                )
-            })
-            black   
-                .then(message => console.log(message))
-                .catch(message => console.log(error))
 
-            //ASYNC FUNCTIONS
-            async function blackBalls() {
-                // var error = 'Authentication Failed'
-                try {
-                    console.log = await black;
-                } catch (error) {
-                    console.log(error)
-                }
-            }
+// Food order promise
+      const foodOrder = new Promise((resolve, reject) =>{
+        console.log('FIRST PROMISES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+        const success = false;
+        if(success){
+            resolve('FOOD IS READY THANKS FOR THE PATIENCE')
+
+        } else {
+            reject("APOLOGIES FOOD NO LONGER AVAILABLE")
+        }
+      })
+
+      foodOrder
+      .then(message => console.log(message))
+      .catch(message => console.log(message))
+
+
+
+
+
+
+
+
+
+
+
+        //     // PROMISES
+        // const foodOrder = new Promise((resolve, reject) => {
+        //     console.log('============ FOOD ORDER =================')
+        //     const success = true;
+        //     if(success){
+        //         resolve("Food is Ready")
+        //         console.log("Food is Ready");
+        //     } else {
+        //         reject('Order not Successful');
+        //         console.log('Order not Successful');
+        //     }
+        // })
+        // foodOrder
+        //     .then( message => console.log(message))
+        //     .catch(message => console.log(error))
+
+
+            // const black =  new Promise((resolve, reject) =>{
+            //     const isTrue = false;
+            //     if(isTrue) {
+            //         resolve(" THERE ARE 10 BLACK BALLS IN THE ROOM")
+            //     } else (
+            //         reject("THERE ARE NO BLACK BALLS IN THE ROOM")
+            //     )
+            // })
+            // black   
+            //     .then(message => console.log(message))
+            //     .catch(message => console.log(error))
+
+            // //ASYNC FUNCTIONS
+            // async function blackBalls() {
+            //     // var error = 'Authentication Failed'
+            //     try {
+            //         console.log = await black;
+            //     } catch (error) {
+            //         console.log(error)
+            //     }
+            // }
         
 
             // POST
@@ -74,6 +107,31 @@
             // APPLICATION
             // PROGRAMMING
             // INTERFACE
+
+          //   const Students = {
+          //     student1:{  // this structure for 25 student randominsing according to the data given
+          //       gender: "male" || "female",
+          //       likesChemistry: false,
+          //       likesMAth: true,
+          //       isPresent: true || false,
+          //     },
+          //     student2:{  // this structure for 25 student randominsing according to the data given
+          //       gender: "male" || "female",
+          //       likesChemistry: false,
+          //       likesMAth: true,
+          //       isPresent: true || false,
+          //     }
+          //   }
+
+          //  const class1 = {
+          //   populatoin : 25,
+          //   boys: 15,
+          //   girls: 10,
+          //   likesMath: 15,
+          //   likesChemistry: 10,
+          //   mondayPresent: 20,
+          //   mondeyAbsent: 5,
+          //  }
             
     </script>
 </body>
